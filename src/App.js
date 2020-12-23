@@ -5,7 +5,7 @@ import MyProvider from './context/MyProvider';
 import Welcome from './pages/Welcome';
 import FormCpf from './components/FormCpf';
 import NotFound from './pages/NotFound';
-import 'bootswatch/dist/flatly/bootstrap.css';
+import 'bootswatch/dist/flatly/bootstrap.min.css';
 import './App.css';
 
 function App() {

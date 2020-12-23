@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.logo-spring-react {
+  width: 240px;
+}
+
+.cpf-list {
+  margin-top: 20px;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .header {
   background-color: #273653;
   height: 100px;
