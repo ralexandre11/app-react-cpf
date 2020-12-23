@@ -1,16 +1,25 @@
 import React from 'react';
-// import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import CpfList from '../components/CpfList';
 
 function Main() {
   return (
-    <div className="app-cpf">
+    <div className="container">
 
       <Header />
-
       <div >
-        <h2 className="sub-title">Liste des numéros de CPF</h2>
+        <h3 className="sub-title">List of CPF Numbers</h3>
+
+        <Link to="/cpf/new" role="button">
+          <button
+            className="btn btn-primary btn-lg"
+            type="button"
+          >
+            Add new CPF
+          </button>
+        </Link>        
+
         <CpfList />
       </div>
 
