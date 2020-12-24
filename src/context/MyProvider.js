@@ -13,6 +13,13 @@ function MyProvider({ children }) {
     setCpf(allCpf);
   }
 
+  async function filterCpf(cpf) {
+    const service = new CpfService();
+    const response = await service.filter(cpf);
+    const myCpf = response.data;
+    setCpf(myCpf);
+  }
+
   useEffect(() => {
     getAllCpf();
   }, []);
@@ -21,6 +28,7 @@ function MyProvider({ children }) {
     cpf,
     setCpf,
     getAllCpf,
+    filterCpf,
   };
 
   return (

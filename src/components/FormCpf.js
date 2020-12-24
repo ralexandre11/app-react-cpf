@@ -24,6 +24,10 @@ function FormCpf() {
     }
   }, []);
 
+  function returnMainPage() {
+    history.push('/main');
+  }
+
   async  function saveCpf() {
     const service = new CpfService();
     const { id, name, cpf } = myCpf;
@@ -35,49 +39,51 @@ function FormCpf() {
       response = await service.saveCpf(cpfToSave);
     }
 
-    console.log(response)
     if (response.status >= 200 && response.status <= 204) {
       alert('CPF saved!');
       getAllCpf();
-      history.push('/main')
+      returnMainPage();
     }
   }
 
   return (
-    <div className="container-sm">
-      <div className="row">
+    <div className="container">
+      <div className="row d-flex justify-content-center align-items-center mt-5">
         <div className="col-md-6">
-          <div className="bs-docs-section">
-            <form>
-              <fieldset>
-                <div className="form-group">
-                  <label htmlFor="InputName">Name</label>
-                  <input 
-                    type="text"
-                    className="form-control"
-                    id="InputName"
-                    placeholder="Enter name"
-                    value={myCpf.name}
-                    onChange={ (e) => setMyCpf({...myCpf, name: e.target.value})}
-                  />
-                </div>
+          <div className="card bg-light md-6" >
+            <div className="card-header">Register your CPF</div>
+            <div className="card-body">
+              <form>
+                <fieldset>
+                  <div className="form-group">
+                    <label htmlFor="InputName">Name</label>
+                    <input 
+                      type="text"
+                      className="form-control"
+                      id="InputName"
+                      placeholder="Enter name"
+                      value={myCpf.name}
+                      onChange={ (e) => setMyCpf({...myCpf, name: e.target.value})}
+                    />
+                  </div>
 
-                <div className="form-group">
-                  <label htmlFor="InputCpf">CPF</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="InputCpf"
-                    placeholder="Enter CPF"
-                    value={myCpf.cpf}
-                    onChange={ (e) => setMyCpf({...myCpf, cpf: e.target.value})}
-                  />
-                </div>
+                  <div className="form-group">
+                    <label htmlFor="InputCpf">CPF</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="InputCpf"
+                      placeholder="Enter CPF"
+                      value={myCpf.cpf}
+                      onChange={ (e) => setMyCpf({...myCpf, cpf: e.target.value})}
+                    />
+                  </div>
 
-                <button type="button" className="btn btn-primary" onClick={ saveCpf } >Save</button>
-              </fieldset>
-            </form>
-            
+                  <button type="button" className="btn btn-primary mr-1" onClick={ saveCpf } >Save</button>
+                  <button type="button" className="btn btn-danger" onClick={ returnMainPage } >Cancel</button>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
       </div>

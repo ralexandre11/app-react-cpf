@@ -1,12 +1,14 @@
 import React from 'react';
+import NavBar from '../components/NavBar';
+import TableCpfList from '../components/TableCpfList';
 import Header from '../components/Header';
-import CpfList from '../components/CpfList';
 
 function Main() {
   return (
     <div>
+      <NavBar />
       <Header />
-      <CpfList />
+      <TableCpfList />
     </div>
   );
 }
