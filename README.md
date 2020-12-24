@@ -11,8 +11,9 @@ If you want, read the reference documentation about [React](https://reactjs.org/
 ## About the application
 
 This repository contains an example application using the React with [Hooks](https://reactjs.org/docs/hooks-intro.html). 
+
 The purpose of the application is:
-* Consuming REST APIs making HTTP requests using methods [Axios](https://github.com/axios/axios).
+* Consuming REST APIs making HTTP requests using methods with [Axios](https://github.com/axios/axios).
 * The methods used were: get, post, put and delete.
 * It was used the Postgres database instance in [AWS](https://aws.amazon.com/). 
 * This appliction React run embedded inside the docker container.
@@ -35,18 +36,6 @@ The table contains three fields as follow:
   * NAME: 50 characters.
   * CPF: 11 characters.
 
-## How to run application using Docker
-* If you don't have Docker, please install Docker:
-[Docker Desktop](https://docs.docker.com/get-docker/) or [Docker basics for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/userguide/docker-basics.html).
-
-* To build the image:
-
-		`docker -D build -f Dockerfile -t projetquebec/app-react .`
-
-* To run:
-
-		`docker run -it --rm -p 3000:80 projetquebec/app-react`
-
 ## How to develop
 * You have install [Node Js](https://nodejs.org/pt-br/download/).
 * Clone the git repository using the URL on the Github home page:
@@ -56,6 +45,19 @@ The table contains three fields as follow:
 * To run:
 
 		`$ npm start`
+
+## How to run application using Docker
+* If you don't have Docker, please install Docker:
+[Docker Desktop](https://docs.docker.com/get-docker/) or [Docker basics for Amazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/userguide/docker-basics.html).
+
+* To build the image:
+
+		`docker -D build -f Dockerfile -t projetquebec/app-react .`
+
+* To run using docker:
+
+		`docker run -it --rm -p 3000:80 projetquebec/app-react`
+
 
 ## dockerhub
 https://hub.docker.com/repository/docker/projetquebec/projetquebec
