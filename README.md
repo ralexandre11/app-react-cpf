@@ -60,4 +60,4 @@ The table contains three fields as follow:
 
 
 ## dockerhub
-https://hub.docker.com/repository/docker/projetquebec/projetquebec
+https://hub.docker.com/repository/docker/projetquebec/app-react
